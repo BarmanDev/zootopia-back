@@ -1,8 +1,9 @@
-// Specie.java
 package dev.team2.zoopoli.Models;
 
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
@@ -18,9 +19,11 @@ public class Specie {
 
     @ManyToOne
     @JoinColumn(name = "id_family")
+    @JsonBackReference
     private Family family;
 
     @OneToMany(mappedBy = "specie", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Animal> animals;
 
     public Specie() {
@@ -64,7 +67,9 @@ public class Specie {
     }
 
     public void addAnimal(Animal animal) {
-        animals.add(animal);
-        animal.setSpecie(this);
+        if (!animals.contains(animal)) {
+            animals.add(animal);
+            animal.setSpecie(this);
+        }
     }
 }
