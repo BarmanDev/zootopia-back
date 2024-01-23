@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 INSERT INTO countries (id_country, country) VALUES (default, 'Spain');
 INSERT INTO countries (id_country, country) VALUES (default, 'Australia');
 INSERT INTO countries (id_country, country) VALUES (default, 'Africa');
@@ -51,3 +52,12 @@ INSERT INTO animal (date, id_country, id_specie, gender, name) VALUES ('2024-01-
 INSERT INTO animal (date, id_country, id_specie, gender, name) VALUES ('2024-01-15', 4, 18, 'Female', 'Otter');
 INSERT INTO animal (date, id_country, id_specie, gender, name) VALUES ('2024-01-15', 4, 19, 'Male', 'Badger');
 INSERT INTO animal (date, id_country, id_specie, gender, name) VALUES ('2024-01-15', 5, 20, 'Male', 'Skunk');
+=======
+INSERT INTO roles (id_role, name) VALUES (default, 'ROLE_ADMIN');
+
+/* User */
+INSERT INTO users (id_user, username, password) VALUES (default, 'Admin', '$2a$12$K..G3QkMFm8p8QZlJnP84.kwhRDGK/uMztc4cVjMG/yNkZL2lYaKO' );
+/*password: passwordencriptada*/
+
+INSERT INTO roles_users (role_id, user_id) VALUES (1, 1);
+>>>>>>> 3120d8d7afb465fe6499e4ac8915251247b1fed6
